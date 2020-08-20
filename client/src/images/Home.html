@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link rel = "stylesheet"
+    href ="stylesheet.css"\>
+    <link rel="icon" href="logo.png">
+    <title>HomePage</title>
+
+    <header>
+      <div class = "container-fluid" id = "container-head">
+       <center>
+        <img src="logo.png" alt="Chef Palace Logo" class="img-responsive"><br>
+        <h2>Chef Palace Thai & Chinese Takeaway</h2>
+          <br>
+       </center>
+     </div>
+    </header>
+
+    <nav class="navbar navbar-default" id="navbarchef">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Chef Palace</a>
+        </div>
+
+      <ul class="nav navbar-nav" id="navwords">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Account.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <body>
+    <div class="container-fluid">
+		  <section>
+  			<br>
+  			<br>
+  			<text>
+        <br>
+        Hello and welcome to the Chef Palace Thai and Chinese Take Away website!<br>
+        Our service is to provide you with the most satifsactory and pleasing meals in all of Dublin!<br>
+        Please feel free to browse our website which will give you more infomation<br>
+  			about our resturant, and also place an order if you're feeling hungry!<br>
+  			<a href="Account.html" >Sign Up here </a> to recieve exclusive offers & deals!</text>
+        <br>
+		</section>
+	 </div>
+
+
+  <br><br>
+  <hr>
+  <br><br>
+    <script language="JavaScript" type="text/javascript">
+    $(document).ready(function(){
+      $('.carousel').carousel({
+        interval: 3000
+      })
+    });
+  </script>
+  <script language="JavaScript" type="text/javascript" src="scripts/jquery.js"></script>
+  <script language="JavaScript" type="text/javascript" src="scripts/bootstrap.min.js"></script>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="my_carousel" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li data-target = "#my_carousel" data-slide-to = "0" class="active"></li>
+            <li data-target = "#my_carousel" data-slide-to = "1"></li>
+            <li data-target = "#my_carousel" data-slide-to = "2"></li>
+            <li data-target = "#my_carousel" data-slide-to = "3"></li>
+            <li data-target = "#my_carousel" data-slide-to = "4"></li>
+          </ol>
+          <div class="carousel-inner i">
+            <div class="item active">
+              <img src="chef3.jpg" alt = "i1" class="img-responsive">
+            </div>
+            <div class="item">
+              <img src="chef2.jpg" alt = "i2" class="img-responsive">
+            </div>
+            <div class="item">
+              <img src="chef4.jpg" alt = "i3" class="img-responsive">
+            </div>
+            <div class="item">
+              <img src="chef1.jpg" alt = "i4" class="img-responsive">
+            </div>
+            <div class="item">
+              <img src="chef.jpg" alt = "i5" class="img-responsive">
+            </div>
+          </div>
+          <a class="carousel-control left" href="#my_carousel" data-slide = "prev">
+            <span class="icon-prev left"></span>
+          </a>
+          <a class="carousel-control right" href="#my_carousel" data-slide = "next">
+            <span class="icon-next right"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br>
+  <hr>
+  <br><br>
+
+  <div class="container-fluid">
+    <center><textheading>Deals of the Week!</textheading></center>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+          <div class="jumbotron">
+            <img src="spicebag.jpg" alt = "spicebag" class="img-responsive">
+            <h2>Spice Bag</h2>
+            <text>Used to be : <pricecut>€7.99</pricecut><br>
+              Now : <pricechange>Only €4.99 !</pricechange>
+            </text>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="jumbotron">
+            <img src="munchiebox.jpg" alt = "munchiebox" class="img-responsive">
+            <h2>Munchie Box</h2>
+            <text>Used to be : <pricecut> €11.99</pricecut><br>
+                Now : <pricechange> Only €7.99 !</pricechange></text>
+          </div>
+        </div>
+      <div>
+    </div>
+    <br>
+    <center>
+      <text><a href="Account.html" >Sign Up </a> To View Our Full Menu!</text>
+    </center>
+  </body>
+
+  <br><br>
+  <hr>
+  <br><br>
+
+  <div id="foot">
+  		<footer>
+  		    Web Development Assignment © Cian Sinclair & John Pwajok
+  		</footer>
+  	</div>
+</html>
