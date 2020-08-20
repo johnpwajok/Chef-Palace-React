@@ -68,3 +68,11 @@ label.label-floatlabel {
   color: #46b8da;
   font-size: 11px;
 }
+
+.img-responsive {
+  width: 100%;
+}
+
+#mainImage {
+  width: 33%;
+}

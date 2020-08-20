@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./styles.css";
-//import Carousel from "react-bootstrap/Carousel";
 import Carousel from "react-bootstrap/Carousel";
 
 import logo from "../images/logo.png";
@@ -24,6 +23,7 @@ export default class Home extends Component {
               <img
                 src={logo}
                 alt="Chef Palace Logo"
+                id="mainImage"
                 class="img-responsive"
               ></img>
               <br></br>
@@ -40,15 +40,11 @@ export default class Home extends Component {
             <text>
               Hello and welcome to the Chef Palace Thai and Chinese Take Away
               website!
-              <br></br>
-              Our service is to provide you with the most satifsactory and
-              pleasing meals in all of Dublin!<br></br>
-              Please feel free to browse our website which will give you more
-              infomation<br></br>
-              about our resturant, and also place an order if you're feeling
-              hungry!<br></br>
-              <a href="Account.html">Sign Up here </a> to recieve exclusive
-              offers & deals!
+            </text>
+            <br></br>
+            <text>
+              <a href="Account.html"> Sign Up here </a> to see our full menu and
+              recieve exclusive offers & deals!
             </text>
             <br></br>
           </section>
