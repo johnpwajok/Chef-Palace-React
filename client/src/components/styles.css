@@ -83,3 +83,16 @@ label.label-floatlabel {
   text-align: center;
   width: 70%;
 }
+
+.contactContainer {
+  margin-top: 4rem;
+  justify-items: center;
+}
+.mapDiv {
+  width: 45%;
+  float: left;
+}
+
+.aboutDiv {
+  width: 45%;
+}
