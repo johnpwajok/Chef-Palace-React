@@ -26,17 +26,12 @@ export default class Home extends Component {
                 id="mainImage"
                 class="img-responsive"
               ></img>
-              <br></br>
-              <h2>Chef Palace Thai & Chinese Takeaway</h2>
-              <br></br>
             </center>
           </div>
         </header>
 
         <div class="container-fluid">
           <section>
-            <br></br>
-            <br></br>
             <text>
               Hello and welcome to the Chef Palace Thai and Chinese Take Away
               website!
@@ -47,21 +42,22 @@ export default class Home extends Component {
               recieve exclusive offers & deals!
             </text>
             <br></br>
+            <br></br>
           </section>
         </div>
-
-        <Carousel>
-          <Carousel.Item interval={1000}>
-            <img className="d-block w-100" src={chef} alt="First slide" />
-          </Carousel.Item>
-          <Carousel.Item interval={1000}>
-            <img className="d-block w-100" src={chef2} alt="Third slide" />
-          </Carousel.Item>
-          <Carousel.Item interval={1000}>
-            <img className="d-block w-100" src={chef3} alt="Third slide" />
-          </Carousel.Item>
-        </Carousel>
-
+        <div className="CarouselSection">
+          <Carousel>
+            <Carousel.Item interval={1000}>
+              <img className="d-block w-100" src={chef} alt="First slide" />
+            </Carousel.Item>
+            <Carousel.Item interval={1000}>
+              <img className="d-block w-100" src={chef2} alt="Third slide" />
+            </Carousel.Item>
+            <Carousel.Item interval={1000}>
+              <img className="d-block w-100" src={chef3} alt="Third slide" />
+            </Carousel.Item>
+          </Carousel>
+        </div>
         <br></br>
         <hr></hr>
         <br></br>

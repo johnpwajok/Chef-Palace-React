@@ -76,3 +76,10 @@ label.label-floatlabel {
 #mainImage {
   width: 33%;
 }
+
+.CarouselSection {
+  padding: 0;
+  margin-left: 15%;
+  text-align: center;
+  width: 70%;
+}
