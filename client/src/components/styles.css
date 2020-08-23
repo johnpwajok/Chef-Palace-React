@@ -85,14 +85,21 @@ label.label-floatlabel {
 }
 
 .contactContainer {
-  margin-top: 4rem;
+  margin-top: 1.5rem;
   justify-items: center;
 }
+
 .mapDiv {
-  width: 45%;
-  float: left;
+  width: 100%;
 }
 
 .aboutDiv {
-  width: 45%;
+  width: 100%;
+
+  justify-content: center;
+}
+
+.responsive-iframe {
+  width: 100%;
+  height: 20rem;
 }
