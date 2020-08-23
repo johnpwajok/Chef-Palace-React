@@ -9,6 +9,10 @@ class Login extends Component {
     this.state = {
       emailAddress: "",
       userPassword: "",
+      newEmailAddress: "",
+      newUserPassword: "",
+      phoneNumber: "",
+      deliveryAddress: "",
     };
 
     this.onChange = this.onChange.bind(this);
@@ -37,6 +41,27 @@ class Login extends Component {
     // });
   }
 
+  createAccount(e) {
+    e.preventDefault();
+
+    const newUser = {
+      newEmailAddress: this.state.newEmailAddress,
+
+      newUserPassword: this.state.newUserPassword,
+      phoneNumber: this.state.phoneNumber,
+      deliveryAddress: this.state.deliveryAddress,
+    };
+
+    // login(user).then((res) => {
+    //   if (res) {
+    //     console.log("res: ", res);
+    //     this.props.history.push("/profile");
+    //   } else {
+    //     alert("Invalid email address or password. Please try again!");
+    //   }
+    // });
+  }
+
   render() {
     return (
       <div className="container">
@@ -51,7 +76,8 @@ class Login extends Component {
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto login">
             <form noValidate onSubmit={this.onSubmit}>
-              <h1 className="h3 mb-3 font-weight-normal">Log In</h1>
+              <h3 className="loginHeadings">Login to Your Account</h3>
+
               <div className="form-group">
                 <label htmlFor="emailAddress">Email Address</label>
                 <input
@@ -82,8 +108,62 @@ class Login extends Component {
               </button>
             </form>
           </div>
+          {/* Registration div */}
           <div className="col-md-6 mt-5 mx-auto register">
-            <h1 className="h3 mb-3 font-weight-normal">Sign up</h1>
+            <form noValidate onSubmit={this.onSubmit}>
+              <h3 className="loginHeadings">Register a New Account</h3>
+
+              <div className="form-group">
+                <label htmlFor="newEmailAddress">Email Address</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  name="newEmailAddress"
+                  placeholder="Email Address"
+                  value={this.state.newEmailAddress}
+                  onChange={this.onChange}
+                ></input>
+              </div>
+              <div className="form-group">
+                <label htmlFor="newUserPassword">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  name="newUserPassword"
+                  placeholder="Password"
+                  value={this.state.newUserPassword}
+                  onChange={this.onChange}
+                ></input>
+              </div>
+              <div className="form-group">
+                <label htmlFor="phoneNumber">Phone Number</label>
+                <input
+                  type="tel"
+                  className="form-control"
+                  name="phoneNumber"
+                  placeholder="Phone Number"
+                  value={this.state.phoneNumber}
+                  onChange={this.onChange}
+                ></input>
+              </div>
+              <div className="form-group">
+                <label htmlFor="deliveryAddress">Delivery Address</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="deliveryAddress"
+                  placeholder="Delivery Address"
+                  value={this.state.deliveryAddress}
+                  onChange={this.onChange}
+                ></input>
+              </div>
+              <button
+                type="submit"
+                className="btn btn-lg btn-primary btn-block"
+              >
+                Sign Up!
+              </button>
+            </form>
           </div>
         </div>
       </div>
