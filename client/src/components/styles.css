@@ -17,6 +17,12 @@ text {
   color: #ff8c00;
   font-size: 30px;
 }
+.nav-link {
+  color: white;
+}
+.navbar-brand {
+  color: white;
+}
 userheader {
   color: #ff8c00;
   font-size: 20px;
