@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+
 import "./App.css";
 
 import NavBar from "./components/NavBar";
@@ -9,6 +10,19 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 
 class App extends Component {
+  // constructor added for express
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.connectToServer = this.connectToServer.bind(this);
+  }
+  connectToServer() {
+    fetch("/");
+  }
+  componentDidMount() {
+    this.connectToServer();
+  }
+
   render() {
     return (
       <Router>
