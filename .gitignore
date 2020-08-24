@@ -1,3 +1,4 @@
 #ignore virtual environment files
 /com/env
 /backend/node_modules
+/node_modules
