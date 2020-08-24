@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname + "/client/public/index.html"));
   });
   //start
-  serverapp.listen(port, (req, res) => {
+  app.listen(port, (req, res) => {
     console.log(`server listening on port: ${port}`);
   });
 }
