@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./styles.css";
 import Carousel from "react-bootstrap/Carousel";
 import FadeIn from "react-fade-in";
+import { Link } from "react-router-dom";
 
 import logo from "../images/logo.png";
 import chef from "../images/chef.jpg";
@@ -40,8 +41,8 @@ export default class Home extends Component {
               </text>
               <br></br>
               <text>
-                <a href="Account.html"> Sign Up here </a> to see our full menu
-                and recieve exclusive offers & deals!
+                <Link to="/login">Sign up here</Link> to see our full menu and
+                recieve exclusive offers & deals!
               </text>
               <br></br>
               <br></br>
@@ -108,7 +109,7 @@ export default class Home extends Component {
             <br></br>
             <center>
               <text>
-                <a href="Account.html">Sign Up </a> To View Our Full Menu!
+                <Link to="/login">Sign Up</Link> To View Our Full Menu!
               </text>
             </center>
 

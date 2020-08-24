@@ -20,15 +20,16 @@ class Navbar extends Component {
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/about">
-            About
-          </Link>
-        </li>
-        <li className="nav-item">
           <Link className="nav-link" to="/contact">
             Contact
           </Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/about">
+            About
+          </Link>
+        </li>
+
         <li className="nav-item">
           <Link className="nav-link" to="/login">
             Login
@@ -69,13 +70,16 @@ class Navbar extends Component {
 
     return (
       //Create navbar (dark with dark backgrond and rounded corners) using style={navbar} for orange background
-      <nav className="navbar navbar-expand-lg rounded" style={navbar}>
+      <nav
+        className="navbar navbar-expand-lg navbar-inverse bg-inverse rounded "
+        style={navbar}
+      >
         {/*Collapse navbar to "hamburger" button for mobile viewport */}
         <ul className="navbar-nav">
           <li className="navbar-brand">Chef Palace</li>
         </ul>
         <button
-          className="navbar-toggler"
+          class="navbar-toggler navbar-toggler-right"
           type="button"
           data-toggle="collapse"
           data-target="#navbar1"
