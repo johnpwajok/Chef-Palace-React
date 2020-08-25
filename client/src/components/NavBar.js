@@ -1,8 +1,6 @@
 /*jshint esversion: 8 */
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
-//import SearchBar from "./SearchBar";
-import NavBar from "react-bootstrap/NavBar";
 
 class Navbar extends Component {
   logOut(e) {
