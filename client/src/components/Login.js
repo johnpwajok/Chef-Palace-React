@@ -70,6 +70,9 @@ class Login extends Component {
           <div className="jumbotron mt-5 mt-5 col-lg-10 col-md-10 col-sm-10 mx-auto">
             <div className="col-sm-8 mx-auto">
               <h1 className="text-center">Sign up or login to your account!</h1>
+              <p className="underDevelopment">
+                Account functionality currently under development
+              </p>
             </div>
           </div>
 

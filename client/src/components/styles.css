@@ -17,6 +17,10 @@ text {
   color: #ff8c00;
   font-size: 30px;
 }
+
+.underDevelopment {
+  color: red;
+}
 .nav-link {
   color: white;
 }
