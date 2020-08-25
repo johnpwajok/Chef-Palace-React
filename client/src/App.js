@@ -8,6 +8,8 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Basket from "./components/Basket";
+import Menu from "./components/Menu";
 
 class App extends Component {
   // constructor added for express
@@ -33,6 +35,8 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/about" component={About} />
             <Route exact path="/contact" component={Contact} />
+            <Route exact path="/menu" component={Menu} />
+            <Route exact path="/basket" component={Basket} />
           </div>
         </div>
       </Router>

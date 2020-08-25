@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 //import SearchBar from "./SearchBar";
+import NavBar from "react-bootstrap/NavBar";
 
 class Navbar extends Component {
   logOut(e) {
@@ -13,7 +14,7 @@ class Navbar extends Component {
   render() {
     const navbar = { backgroundColor: "#F16E10" };
     const loginRegistrationLink = (
-      <ul className="navbar-nav d-flex justify-content-end">
+      <ul className="navbar-nav mr-auto justify-content-end">
         <li className="nav-item">
           <Link to="/" className="nav-link">
             Home
@@ -39,20 +40,25 @@ class Navbar extends Component {
     );
 
     const userLink = (
-      <ul className="navbar-nav">
-        <li className="nav_item">
-          <Link className="nav-link" to="/searchResults">
-            <span class="oi oi-magnifying-glass"></span>Search
-          </Link>
-        </li>
-        <li className="nav_item">
-          <Link className="nav-link" to="/groupSearch">
-            <span class="oi oi-magnifying-glass"></span>Group Search
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item">
+          <Link className="nav-link" to="/menu">
+            <span class="oi oi-magnifying-glass"></span>Menu
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/profile">
-            My Account
+          <Link className="nav-link" to="/contact">
+            <span class="oi oi-magnifying-glass"></span>Contact
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/about">
+            About
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/basket">
+            My Basket
           </Link>
         </li>
         <li className="nav-item">
@@ -60,18 +66,13 @@ class Navbar extends Component {
             Log Out
           </a>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/help">
-            Help
-          </Link>
-        </li>
       </ul>
     );
 
     return (
       //Create navbar (dark with dark backgrond and rounded corners) using style={navbar} for orange background
       <nav
-        className="navbar navbar-expand-lg navbar-inverse bg-inverse rounded "
+        className="navbar navbar-expand-lg navbar-dark  rounded"
         style={navbar}
       >
         {/*Collapse navbar to "hamburger" button for mobile viewport */}
@@ -79,7 +80,7 @@ class Navbar extends Component {
           <li className="navbar-brand">Chef Palace</li>
         </ul>
         <button
-          class="navbar-toggler navbar-toggler-right"
+          class="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbar1"
@@ -87,12 +88,12 @@ class Navbar extends Component {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
         <div
-          className="collapse navbar-collapse justify-content-md-center"
           id="navbar1"
+          className="collapse navbar-collapse justify-content-md-center"
         >
           {/*If user is logged in, display userLink values else user loginRegistrationLink values*/}
           {localStorage.userToken ? userLink : loginRegistrationLink}
