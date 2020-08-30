@@ -42,7 +42,7 @@ export default class Home extends Component {
               <br></br>
               <text>
                 <Link to="/login">Sign up here</Link> to see our full menu and
-                recieve exclusive offers & deals!
+                receive exclusive offers & deals!
               </text>
               <br></br>
               <br></br>
