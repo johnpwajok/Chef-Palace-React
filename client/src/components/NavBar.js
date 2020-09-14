@@ -1,6 +1,7 @@
 /*jshint esversion: 8 */
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
+import Logout from "./Logout";
 
 class Navbar extends Component {
   logOut(e) {
@@ -30,9 +31,7 @@ class Navbar extends Component {
         </li>
 
         <li className="nav-item">
-          <Link className="nav-link" to="/login">
-            Login
-          </Link>
+          <Logout></Logout>
         </li>
       </ul>
     );

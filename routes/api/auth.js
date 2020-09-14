@@ -6,6 +6,7 @@ const User = require("../../models/User");
 
 const config = require("config");
 const jwt = require("jsonwebtoken");
+const auth = require("../../middleware/auth");
 
 // @route       POST api/auth
 // @description Authenticate a registered user
@@ -51,6 +52,15 @@ router.post("/", (req, res) => {
       );
     });
   });
+});
+
+// @route       GET api/auth/user
+// @description Get user data
+// @access      Private
+router.get("/user", auth, (req, res) => {
+  User.findById(req.user.id)
+    .select("-password")
+    .then((user) => res.json(user));
 });
 
 module.exports = router;
