@@ -1,16 +1,17 @@
 /*jshint esversion: 8 */
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { PropTypes } from "prop-types";
 import Logout from "./Logout";
 
 class Navbar extends Component {
-  logOut(e) {
-    e.preventDefault();
-    localStorage.removeItem("userToken");
-    this.props.history.push("/");
-  }
+  static propTypes = {
+    auth: PropTypes.object.isRequired,
+  };
 
   render() {
+    const { isAuthenticated, user } = this.props.auth;
     const navbar = { backgroundColor: "#F16E10" };
     const loginRegistrationLink = (
       <ul className="navbar-nav mr-auto justify-content-end">
@@ -31,7 +32,9 @@ class Navbar extends Component {
         </li>
 
         <li className="nav-item">
-          <Logout></Logout>
+          <Link className="nav-link" to="/login">
+            Login
+          </Link>
         </li>
       </ul>
     );
@@ -54,14 +57,17 @@ class Navbar extends Component {
           </Link>
         </li>
         <li className="nav-item">
+          <span className="navbar-text mr-3">
+            <strong>{user ? `Welcome ${user.name}` : null}</strong>
+          </span>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link" to="/basket">
             My Basket
           </Link>
         </li>
         <li className="nav-item">
-          <a href="" className="nav-link" onClick={this.logOut.bind(this)}>
-            Log Out
-          </a>
+          <Logout></Logout>
         </li>
       </ul>
     );
@@ -90,14 +96,18 @@ class Navbar extends Component {
 
         <div
           id="navbar1"
-          className="collapse navbar-collapse justify-content-md-center"
+          className="collapse navbar-collapse justify-content-right"
         >
           {/*If user is logged in, display userLink values else user loginRegistrationLink values*/}
-          {localStorage.userToken ? userLink : loginRegistrationLink}
+          {isAuthenticated ? userLink : loginRegistrationLink}
         </div>
       </nav>
     );
   }
 }
 
-export default withRouter(Navbar);
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default withRouter(connect(mapStateToProps, null)(Navbar));
