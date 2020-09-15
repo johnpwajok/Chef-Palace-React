@@ -38,7 +38,7 @@ class Navbar extends Component {
         <ul class="nav navbar-nav navbar-right">
           <li className="nav-item">
             <Link className="nav-link" to="/login">
-              Login
+              Login <i class="fas fa-sign-in-alt"></i>
             </Link>
           </li>
         </ul>

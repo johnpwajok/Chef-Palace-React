@@ -39,7 +39,7 @@ export class Login extends Component {
 
     if (this.props.isAuthenticated) {
       console.log(localStorage.getItem("token"));
-      this.props.history.push("/");
+      this.props.history.push("/menu");
     }
   }
 
@@ -73,8 +73,10 @@ export class Login extends Component {
                 <Alert color="danger">{this.state.msg}</Alert>
               ) : null}
 
-              <div className="form-group">
-                <label htmlFor="email">Email Address</label>
+              <div className="form-group ">
+                <label htmlFor="email" className="loginLabel ">
+                  Email Address
+                </label>
                 <input
                   type="email"
                   className="form-control"
@@ -84,8 +86,10 @@ export class Login extends Component {
                   onChange={this.onChange}
                 ></input>
               </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
+              <div className="form-group ">
+                <label htmlFor="password" className="loginLabel">
+                  Password
+                </label>
                 <input
                   type="password"
                   className="form-control"

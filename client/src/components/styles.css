@@ -117,3 +117,8 @@ label.label-floatlabel {
   width: 100%;
   height: 20rem;
 }
+
+/* login and register labels */
+.loginLabel {
+  color: #ff8c00;
+}

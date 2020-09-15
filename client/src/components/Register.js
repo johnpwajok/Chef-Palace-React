@@ -82,7 +82,9 @@ export class Register extends Component {
                 <Alert color="danger">{this.state.msg}</Alert>
               ) : null}
               <div className="form-group">
-                <label htmlFor="Name">Name</label>
+                <label htmlFor="Name" className="loginLabel">
+                  Name
+                </label>
                 <input
                   type="text"
                   className="form-control"
@@ -94,7 +96,9 @@ export class Register extends Component {
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email" className="loginLabel">
+                  Email Address
+                </label>
                 <input
                   type="email"
                   className="form-control"
@@ -105,7 +109,9 @@ export class Register extends Component {
                 ></input>
               </div>
               <div className="form-group">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" className="loginLabel">
+                  Password
+                </label>
                 <input
                   type="password"
                   className="form-control"
@@ -116,7 +122,9 @@ export class Register extends Component {
                 ></input>
               </div>
               <div className="form-group">
-                <label htmlFor="phone">Phone Number</label>
+                <label htmlFor="phone" className="loginLabel">
+                  Phone Number
+                </label>
                 <input
                   type="tel"
                   className="form-control"
@@ -127,7 +135,9 @@ export class Register extends Component {
                 ></input>
               </div>
               <div className="form-group">
-                <label htmlFor="deliveryAddress">Delivery Address</label>
+                <label htmlFor="deliveryAddress" className="loginLabel">
+                  Delivery Address
+                </label>
                 <input
                   type="text"
                   className="form-control"
