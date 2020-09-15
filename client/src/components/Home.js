@@ -41,8 +41,8 @@ export default class Home extends Component {
               </text>
               <br></br>
               <text>
-                <Link to="/login">Sign up here</Link> to see our full menu and
-                receive exclusive offers & deals!
+                <Link to="/register">Sign up here</Link> to see our full menu
+                and receive exclusive offers & deals!
               </text>
               <br></br>
               <br></br>
@@ -109,7 +109,7 @@ export default class Home extends Component {
             <br></br>
             <center>
               <text>
-                <Link to="/login">Sign Up</Link> To View Our Full Menu!
+                <Link to="/register">Sign Up</Link> To View Our Full Menu!
               </text>
             </center>
 

@@ -14,62 +14,75 @@ class Navbar extends Component {
     const { isAuthenticated, user } = this.props.auth;
     const navbar = { backgroundColor: "#F16E10" };
     const loginRegistrationLink = (
-      <ul className="navbar-nav mr-auto justify-content-end">
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/contact">
-            Contact
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/about">
-            About
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link className="nav-link" to="/login">
-            Login
-          </Link>
-        </li>
-      </ul>
+      <div
+        id="navbar1"
+        className="collapse navbar-collapse justify-content-right"
+      >
+        <ul className="navbar-nav mr-auto justify-content-end">
+          <li className="nav-item">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/contact">
+              Contact
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/about">
+              About
+            </Link>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li className="nav-item">
+            <Link className="nav-link" to="/login">
+              Login
+            </Link>
+          </li>
+        </ul>
+      </div>
     );
 
     const userLink = (
-      <ul className="navbar-nav mr-auto">
-        <li className="nav-item">
-          <Link className="nav-link" to="/menu">
-            <span class="oi oi-magnifying-glass"></span>Menu
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/contact">
-            <span class="oi oi-magnifying-glass"></span>Contact
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/about">
-            About
-          </Link>
-        </li>
-        <li className="nav-item">
-          <span className="navbar-text mr-3">
-            <strong>{user ? `Welcome ${user.name}` : null}</strong>
-          </span>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/basket">
-            My Basket
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Logout></Logout>
-        </li>
-      </ul>
+      <div
+        id="navbar1"
+        className="collapse navbar-collapse justify-content-right"
+      >
+        <ul className="navbar-nav mr-auto justify-content-end">
+          <li className="nav-item">
+            <span className="navbar-text mr-3">
+              <strong>{user ? `Welcome ${user.name}` : null}</strong>
+            </span>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/menu">
+              <span class="oi oi-magnifying-glass"></span>Menu
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/contact">
+              <span class="oi oi-magnifying-glass"></span>Contact
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/about">
+              About
+            </Link>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li className="nav-item">
+            <Link className="nav-link" to="/basket">
+              My Basket <i class="fas fa-shopping-basket"></i>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Logout></Logout>
+          </li>
+        </ul>
+      </div>
     );
 
     return (
@@ -94,13 +107,13 @@ class Navbar extends Component {
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div
+        {/* <div
           id="navbar1"
           className="collapse navbar-collapse justify-content-right"
-        >
-          {/*If user is logged in, display userLink values else user loginRegistrationLink values*/}
-          {isAuthenticated ? userLink : loginRegistrationLink}
-        </div>
+        > */}
+        {/*If user is logged in, display userLink values else user loginRegistrationLink values*/}
+        {isAuthenticated ? userLink : loginRegistrationLink}
+        {/* </div> */}
       </nav>
     );
   }

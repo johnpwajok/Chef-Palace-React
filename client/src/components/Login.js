@@ -65,47 +65,52 @@ export class Login extends Component {
   render() {
     return (
       <div>
-        <div className="col-md-6 mt-5 mx-auto register">
-          <form noValidate onSubmit={this.onSubmit}>
-            <h3 className="loginHeadings">Login to your account</h3>
-            {this.state.msg ? (
-              <Alert color="danger">{this.state.msg}</Alert>
-            ) : null}
+        <FadeIn>
+          <div className="col-md-6 mt-5 mx-auto register">
+            <form noValidate onSubmit={this.onSubmit}>
+              <h3 className="loginHeadings">Login to your account</h3>
+              {this.state.msg ? (
+                <Alert color="danger">{this.state.msg}</Alert>
+              ) : null}
 
-            <div className="form-group">
-              <label htmlFor="email">Email Address</label>
-              <input
-                type="email"
-                className="form-control"
-                name="email"
-                placeholder="Email Address"
-                value={this.state.email}
-                onChange={this.onChange}
-              ></input>
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                className="form-control"
-                name="password"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.onChange}
-              ></input>
-            </div>
+              <div className="form-group">
+                <label htmlFor="email">Email Address</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  placeholder="Email Address"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                ></input>
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.onChange}
+                ></input>
+              </div>
 
-            <button type="submit" className="btn btn-lg btn-primary btn-block">
-              Login
-            </button>
-          </form>
-          <br></br>
-          <center>
-            <h4 style={{ color: "orange", float: "left" }}>
-              Don't have an account? - <Link to="/register"> Register</Link>
-            </h4>
-          </center>
-        </div>
+              <button
+                type="submit"
+                className="btn btn-lg btn-primary btn-block"
+              >
+                Login
+              </button>
+            </form>
+            <br></br>
+            <center>
+              <h4 style={{ color: "orange", float: "left" }}>
+                Don't have an account? - <Link to="/register"> Register</Link>
+              </h4>
+            </center>
+          </div>
+        </FadeIn>
       </div>
     );
   }

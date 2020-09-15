@@ -12,8 +12,8 @@ export class Logout extends Component {
   render() {
     return (
       <Fragment>
-        <NavLink onClick={this.props.logout} href="">
-          Logout
+        <NavLink onClick={this.props.logout} href="/">
+          Logout <i class="fas fa-sign-out-alt"></i>
         </NavLink>
       </Fragment>
     );
