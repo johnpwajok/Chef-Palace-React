@@ -6,6 +6,7 @@ const MenuItemSchema = new Schema({
   name: {
     type: String,
     required: true,
+    unique: true,
   },
   ingredients: {
     type: [String],
@@ -14,7 +15,6 @@ const MenuItemSchema = new Schema({
   category: {
     type: String,
     required: true,
-    unique: true,
   },
   glutenFree: {
     type: Boolean,

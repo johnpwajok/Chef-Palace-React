@@ -122,3 +122,31 @@ label.label-floatlabel {
 .loginLabel {
   color: #ff8c00;
 }
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* MENU SECTION */
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+.menuItem {
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.menuItemInfo {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: left;
+}
+
+.menuItemImage {
+}
+
+.itemImage {
+  max-width: 300px;
+}

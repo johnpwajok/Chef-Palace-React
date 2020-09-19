@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import FadeIn from "react-fade-in";
+import "./styles.css";
 
 //from react-redux
 import { connect } from "react-redux";
@@ -15,10 +17,9 @@ export class Menu extends Component {
   };
 
   componentDidMount() {
-    // setTimeout(this.props.getMenuItems(), 1000);
     this.props.getMenuItems();
     // this.setState({ items: this.props.menuItem });
-    console.log("prop: ", this.props.menuItem);
+    // console.log("prop: ", this.props.menuItem);
     // console.log("items State: ", this.state.items);
   }
 
@@ -57,27 +58,50 @@ export class Menu extends Component {
 
     // let { menuItems } = this.props.menuItem;
 
-    console.log("loading: ", loading);
-    console.log("item break: ", this.props.menuItem.items);
+    // console.log("loading: ", loading);
+    // console.log("item break: ", this.props.menuItem.items);
 
-    return (
-      <div>
-        <div class="jumbotron">
-          <h1 class="display-4">Chef Palace Menu</h1>
-          <br></br> <hr class="my-4"></hr>
-          <p>Menu is currently under development!</p>
+    if (this.props.isAuthenticated) {
+      return (
+        <div>
+          <div class="jumbotron">
+            <h1 class="display-4">Chef Palace Menu</h1>
+            <br></br> <hr class="my-4"></hr>
+            <p>Menu is currently under development!</p>
+          </div>
           {this.props.menuItem.items ? (
-            <ol>
-              {this.props.menuItem.items.map(({ name }) => (
-                <li>{name}</li>
-              ))}
-            </ol>
+            <ul>
+              {this.props.menuItem.items.map(
+                ({ name, ingredients, price, itemImage }) => (
+                  <li className="menuItem">
+                    <h4 className="menuItemName">{name}</h4>
+                    <br></br>
+                    <div className="menuItemInfo">
+                      <p>Ingredients: {ingredients}</p>
+                      <p>price: €{price}</p>
+                    </div>
+
+                    <div className="menuItemImage">
+                      <img src={itemImage} className="itemImage"></img>
+                    </div>
+                  </li>
+                )
+              )}
+            </ul>
           ) : (
             "Loading..."
           )}
         </div>
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div>
+          <h1 style={{ color: "red" }}>
+            You must be logged in to view this page
+          </h1>
+        </div>
+      );
+    }
   }
 }
 
