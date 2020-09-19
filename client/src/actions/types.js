@@ -8,6 +8,12 @@ export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";
 
+//for menu items
+export const GET_MENUITEMS = "GET_MENUITEMS";
+export const ADD_MENUITEM = "ADD_MENUITEMS";
+export const DELETE_MENUITEM = "DELETE_MENUITEM";
+export const MENUITEMS_LOADING = "MENUITEMS_LOADING";
+
 //For errors
 export const GET_ERRORS = "GET_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";

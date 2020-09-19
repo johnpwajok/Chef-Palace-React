@@ -48,6 +48,7 @@ const upload = multer({
 
 router.get("/", (req, res) => {
   MenuItem.find().then((menuItems) => res.json(menuItems));
+  // console.log(res.data);
 });
 
 // @route       POST api/menuItems

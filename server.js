@@ -24,6 +24,8 @@ mongoose
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
 app.use("/api/menuItems", require("./routes/api/menuItems"));
+//to have public access to images (ie. http://localhost:5000/uploads/1600537897890chili_chicken.jpg)
+app.use("/uploads", express.static("uploads"));
 
 //Static file declaration
 // app.use(express.static(path.join(__dirname, "client/build")));
