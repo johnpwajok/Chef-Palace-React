@@ -23,6 +23,7 @@ mongoose
 
 app.use("/api/users", require("./routes/api/users"));
 app.use("/api/auth", require("./routes/api/auth"));
+app.use("/api/menuItems", require("./routes/api/menuItems"));
 
 //Static file declaration
 // app.use(express.static(path.join(__dirname, "client/build")));
