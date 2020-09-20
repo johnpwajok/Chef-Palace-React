@@ -7,7 +7,7 @@ const initialState = {};
 const middleware = [thunk];
 
 if (process.env.NODE_ENV === "production") {
-  store = createStore(
+  const store = createStore(
     rootReducer,
     initialState,
     compose(applyMiddleware(...middleware))
