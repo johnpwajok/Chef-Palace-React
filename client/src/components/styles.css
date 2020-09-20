@@ -135,7 +135,9 @@ label.label-floatlabel {
   background-color: white;
 }
 .catHead {
+  margin-top: 4rem;
   color: #ff8c00;
+  margin-right: 2.5rem;
 }
 .menuItem {
   overflow: auto;

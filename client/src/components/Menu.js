@@ -38,6 +38,9 @@ export class Menu extends Component {
               <h1 class="display-4">Chef Palace Menu</h1>
               <hr class="my-4"></hr>
               <p>All our meals are made to order!</p>
+              <h4 style={{ color: "red" }}>
+                Add to Cart functionality is currently under development
+              </h4>
             </div>
             {this.props.menuItem.items ? (
               <div>
