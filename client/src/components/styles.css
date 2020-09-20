@@ -131,22 +131,51 @@ label.label-floatlabel {
 
 /* ////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////// */
-
+.menuJumbo {
+  background-color: white;
+}
+.catHead {
+  color: #ff8c00;
+}
 .menuItem {
+  overflow: auto;
+  margin-right: 2.5rem;
   margin-bottom: 2rem;
   border-radius: 10px;
   background-color: white;
+  padding: 1rem;
 }
-
+.menuItemName {
+  color: #ff8c00;
+}
 .menuItemInfo {
-  padding-left: 1rem;
-  padding-right: 1rem;
   float: left;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .menuItemImage {
+  float: left;
 }
 
 .itemImage {
-  max-width: 300px;
+  max-width: 14rem;
+  min-height: 10rem;
+  max-height: 10rem;
+  display: block;
+}
+
+.addToCartDiv {
+  float: right;
+}
+
+.addToCartButton {
+  color: white;
+  background-color: #ff8c00;
+}
+@media only screen and (max-width: 996px) {
+  .menuItemImage {
+    float: none;
+    width: 100%;
+  }
 }

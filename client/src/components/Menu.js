@@ -25,73 +25,168 @@ export class Menu extends Component {
 
   render() {
     // {this.props.menuItem.items?this.state.node.node_status.name:""}
-    const loading = this.props.menuItem.loading;
-    let { menuItems } = this.props.menuItem;
-    let loaded = false;
-    let itemsLoaded;
-
-    // switch (loading) {
-    //   case true:
-    //     menuItems = this.props.menuItem;
-    //     itemsLoaded = (
-    //       <ol>
-    //         <li>Loading...</li>
-    //       </ol>
-    //     );
-    //   case false:
-    //     loaded = true;
-    //     console.log(
-    //       "the prop menu items have loaded: ",
-    //       this.props.menuItem.items
-    //     );
-    //     menuItems = this.props.menuItem.items;
-    //     itemsLoaded = (
-    //       <ol>
-    //         {menuItems.map(({ name }) => (
-    //           <li>{name}</li>
-    //         ))}
-    //       </ol>
-    //     );
-    //   default:
-    //     menuItems = this.props.menuItem;
-    // }
-
+    // const loading = this.props.menuItem.loading;
     // let { menuItems } = this.props.menuItem;
-
-    // console.log("loading: ", loading);
-    // console.log("item break: ", this.props.menuItem.items);
+    // let loaded = false;
+    // let itemsLoaded;
 
     if (this.props.isAuthenticated) {
       return (
-        <div>
-          <div class="jumbotron">
-            <h1 class="display-4">Chef Palace Menu</h1>
-            <br></br> <hr class="my-4"></hr>
-            <p>Menu is currently under development!</p>
-          </div>
-          {this.props.menuItem.items ? (
-            <ul>
-              {this.props.menuItem.items.map(
-                ({ name, ingredients, price, itemImage }) => (
-                  <li className="menuItem">
-                    <h4 className="menuItemName">{name}</h4>
-                    <br></br>
-                    <div className="menuItemInfo">
-                      <p>Ingredients: {ingredients}</p>
-                      <p>price: €{price}</p>
-                    </div>
+        <FadeIn>
+          <div>
+            <div class="jumbotron menuJumbo">
+              <h1 class="display-4">Chef Palace Menu</h1>
+              <hr class="my-4"></hr>
+              <p>All our meals are made to order!</p>
+            </div>
+            {this.props.menuItem.items ? (
+              <div>
+                {/* for starters */}
+                <ul>
+                  <h2 className="catHead">Starters</h2>
+                  {this.props.menuItem.items
+                    .filter((item) => item.category === "Starter")
+                    .map(
+                      ({
+                        name,
+                        ingredients,
+                        glutenFree,
+                        vegan,
+                        price,
+                        itemImage,
+                      }) => (
+                        <li className="menuItem">
+                          <h4 className="menuItemName ">{name}</h4>
+                          <br></br>
+                          <center>
+                            <div class="row">
+                              <div className="menuItemImage col-lg-4 col-md-4 col-sm-12">
+                                <img
+                                  src={itemImage}
+                                  className="itemImage"
+                                ></img>
+                              </div>
+                              <div className="menuItemInfo col-lg-4 col-md-4 col-sm-12">
+                                <p>Ingredients: {ingredients}</p>
+                                <p>
+                                  {glutenFree ? (
+                                    <p>Gluten free: yes</p>
+                                  ) : (
+                                    <p>Gluten free: no</p>
+                                  )}
+                                </p>
+                                <p>
+                                  {vegan ? <p>Vegan: yes</p> : <p>Vegan: no</p>}
+                                </p>
+                                <p>price: €{price}</p>
+                              </div>
+                              <div className="addToCartDiv col-lg-4 col-md-4 col-sm-12">
+                                <button
+                                  type="button"
+                                  class="btn btn-outline-warning addToCartButton"
+                                >
+                                  Add to Cart{" "}
+                                  <i class="fas fa-shopping-basket"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </center>
+                        </li>
+                      )
+                    )}
+                </ul>
+                {/* For main courses */}
+                <ul>
+                  <h2 className="catHead">Main Courses</h2>
+                  {this.props.menuItem.items
+                    .filter((item) => item.category === "Main")
+                    .map(
+                      ({
+                        name,
+                        ingredients,
+                        glutenFree,
+                        vegan,
+                        price,
+                        itemImage,
+                      }) => (
+                        <li className="menuItem">
+                          <h4 className="menuItemName ">{name}</h4>
+                          <br></br>
+                          <center>
+                            <div class="row">
+                              <div className="menuItemImage col-lg-4 col-md-4 col-sm-12">
+                                <img
+                                  src={itemImage}
+                                  className="itemImage"
+                                ></img>
+                              </div>
+                              <div className="menuItemInfo col-lg-4 col-md-4 col-sm-12">
+                                <p>Ingredients: {ingredients}</p>
+                                <p>
+                                  {glutenFree ? (
+                                    <p>Gluten free: yes</p>
+                                  ) : (
+                                    <p>Gluten free: no</p>
+                                  )}
+                                </p>
+                                <p>
+                                  {vegan ? <p>Vegan: yes</p> : <p>Vegan: no</p>}
+                                </p>
+                                <p>price: €{price}</p>
+                              </div>
+                              <div className="addToCartDiv col-lg-4 col-md-4 col-sm-12">
+                                <button
+                                  type="button"
+                                  class="btn btn-outline-warning addToCartButton"
+                                >
+                                  Add to Cart{" "}
+                                  <i class="fas fa-shopping-basket"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </center>
+                        </li>
+                      )
+                    )}
+                </ul>
 
-                    <div className="menuItemImage">
-                      <img src={itemImage} className="itemImage"></img>
-                    </div>
-                  </li>
-                )
-              )}
-            </ul>
-          ) : (
-            "Loading..."
-          )}
-        </div>
+                {/* For Drinks */}
+                <ul>
+                  <h2 className="catHead">Drinks</h2>
+                  {this.props.menuItem.items
+                    .filter((item) => item.category === "Drink")
+                    .map(({ name, price, itemImage }) => (
+                      <li className="menuItem">
+                        <h4 className="menuItemName ">{name}</h4>
+                        <br></br>
+                        <center>
+                          <div class="row">
+                            <div className="menuItemImage col-lg-4 col-md-4 col-sm-12">
+                              <img src={itemImage} className="itemImage"></img>
+                            </div>
+                            <div className="menuItemInfo col-lg-4 col-md-4 col-sm-12">
+                              <p>price: €{price}</p>
+                            </div>
+                            <div className="addToCartDiv col-lg-4 col-md-4 col-sm-12">
+                              <button
+                                type="button"
+                                class="btn btn-outline-warning addToCartButton"
+                              >
+                                Add to Cart{" "}
+                                <i class="fas fa-shopping-basket"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </center>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            ) : (
+              "Loading..."
+            )}
+          </div>
+        </FadeIn>
       );
     } else {
       return (

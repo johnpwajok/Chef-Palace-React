@@ -11,26 +11,32 @@ const MenuItemSchema = new Schema({
   ingredients: {
     type: [String],
     required: true,
+    unique: false,
   },
   category: {
     type: String,
     required: true,
+    unique: false,
   },
   glutenFree: {
     type: Boolean,
     required: true,
+    unique: false,
   },
   vegan: {
     type: Boolean,
     required: true,
+    unique: false,
   },
   price: {
     type: Number,
     required: true,
+    unique: false,
   },
   itemImage: {
     type: String,
     required: true,
+    unique: false,
   },
 });
 
