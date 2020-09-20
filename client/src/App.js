@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import store from "./store";
+import store from "./store";
 import { Provider } from "react-redux";
 
 import "./App.css";
@@ -34,20 +34,20 @@ class App extends Component {
   render() {
     return (
       <Router>
-        {/* <Provider store={store}> */}
-        <div className="App">
-          <NavBar />
-          <Route exact path="/" component={Home} />
-          <div className="container">
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/menu" component={Menu} />
-            <Route exact path="/basket" component={Basket} />
+        <Provider store={store}>
+          <div className="App">
+            <NavBar />
+            <Route exact path="/" component={Home} />
+            <div className="container">
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/contact" component={Contact} />
+              <Route exact path="/menu" component={Menu} />
+              <Route exact path="/basket" component={Basket} />
+            </div>
           </div>
-        </div>
-        {/* </Provider> */}
+        </Provider>
       </Router>
     );
   }
