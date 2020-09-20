@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === "production") {
     initialState,
     compose(applyMiddleware(...middleware))
   );
+  export default store;
 } else {
   const store = createStore(
     rootReducer,
@@ -22,6 +23,5 @@ if (process.env.NODE_ENV === "production") {
         window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );
+  export default store;
 }
-
-export default store;
