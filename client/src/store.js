@@ -5,7 +5,7 @@ import rootReducer from "./reducers";
 const initialState = {};
 
 const middleware = [thunk];
-const store;
+var store;
 
 if (process.env.NODE_ENV === "production") {
   store = createStore(
@@ -23,7 +23,6 @@ if (process.env.NODE_ENV === "production") {
         window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );
-  
 }
 
 export default store;
