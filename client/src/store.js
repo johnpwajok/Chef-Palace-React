@@ -7,6 +7,7 @@ const initialState = {};
 const middleware = [thunk];
 var store;
 
+//CHECK FOR ENV, don't apply rexux_devtools_extension in prod
 if (process.env.NODE_ENV === "production") {
   store = createStore(
     rootReducer,
