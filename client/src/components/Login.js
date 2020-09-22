@@ -38,7 +38,7 @@ export class Login extends Component {
     }
 
     if (this.props.isAuthenticated) {
-      console.log(localStorage.getItem("token"));
+      // console.log(localStorage.getItem("token"));
       this.props.history.push("/menu");
     }
   }
