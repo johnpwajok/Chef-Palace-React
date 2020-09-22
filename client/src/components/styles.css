@@ -41,6 +41,9 @@ text2 {
   color: #ff8c00;
   font-size: 20px;
 }
+#mainImage {
+  max-width: 300px;
+}
 hr {
   background-color: #ff8c00;
   color: #ff8c00;
