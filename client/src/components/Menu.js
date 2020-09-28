@@ -71,16 +71,15 @@ export class Menu extends Component {
                               </div>
                               <div className="menuItemInfo col-lg-4 col-md-4 col-sm-12">
                                 <p>Ingredients: {ingredients}</p>
-                                <p>
-                                  {glutenFree ? (
-                                    <p>Gluten free: yes</p>
-                                  ) : (
-                                    <p>Gluten free: no</p>
-                                  )}
-                                </p>
-                                <p>
-                                  {vegan ? <p>Vegan: yes</p> : <p>Vegan: no</p>}
-                                </p>
+
+                                {glutenFree ? (
+                                  <p>Gluten free: yes</p>
+                                ) : (
+                                  <p>Gluten free: no</p>
+                                )}
+
+                                {vegan ? <p>Vegan: yes</p> : <p>Vegan: no</p>}
+
                                 <p>price: €{price}</p>
                               </div>
                               <div className="addToCartDiv col-lg-4 col-md-4 col-sm-12">
@@ -125,16 +124,12 @@ export class Menu extends Component {
                               </div>
                               <div className="menuItemInfo col-lg-4 col-md-4 col-sm-12">
                                 <p>Ingredients: {ingredients}</p>
-                                <p>
-                                  {glutenFree ? (
-                                    <p>Gluten free: yes</p>
-                                  ) : (
-                                    <p>Gluten free: no</p>
-                                  )}
-                                </p>
-                                <p>
-                                  {vegan ? <p>Vegan: yes</p> : <p>Vegan: no</p>}
-                                </p>
+                                {glutenFree ? (
+                                  <p>Gluten free: yes</p>
+                                ) : (
+                                  <p>Gluten free: no</p>
+                                )}
+                                {vegan ? <p>Vegan: yes</p> : <p>Vegan: no</p>}
                                 <p>price: €{price}</p>
                               </div>
                               <div className="addToCartDiv col-lg-4 col-md-4 col-sm-12">

@@ -13,6 +13,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Basket from "./components/Basket";
 import Menu from "./components/Menu";
+import TestBasket from "./components/TestBasket";
 
 import { loadUser } from "./actions/authActions";
 
@@ -45,6 +46,7 @@ class App extends Component {
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/menu" component={Menu} />
               <Route exact path="/basket" component={Basket} />
+              <Route exact path="/testBasket" component={TestBasket} />
             </div>
           </div>
         </Provider>

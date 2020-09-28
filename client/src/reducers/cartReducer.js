@@ -1,39 +1,44 @@
 import {
-  GET_MENUITEMS,
-  ADD_MENUITEM,
-  DELETE_MENUITEM,
-  MENUITEMS_LOADING,
+  GET_CART,
+  ADD_CART,
+  DELETE_CART,
+  CART_LOADING,
 } from "../actions/types";
 
 const initialState = {
-  menuItems: [],
+  cartItems: [],
   loading: false,
 };
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case MENUITEMS_LOADING:
+    case CART_LOADING:
       return {
         ...state,
         loading: true,
       };
-    case GET_MENUITEMS:
+    case GET_CART:
       console.log("in reduce function");
       return {
         ...state,
         items: action.payload,
         loading: false,
       };
-    case ADD_MENUITEM:
+    //{
+    //   ...state,
+    //   items: action.payload,
+    //   loading: false,
+    // };
+    case ADD_CART:
       return {
         ...state,
         items: [action.payload, ...state.items],
       };
 
-    case DELETE_MENUITEM:
+    case DELETE_CART:
       return {
         ...state,
-        items: state.irems.filter((item) => item._id !== action.payload),
+        items: state.items.filter((item) => item._id !== action.payload),
       };
 
     default:

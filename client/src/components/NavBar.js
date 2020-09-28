@@ -35,10 +35,10 @@ class Navbar extends Component {
             </Link>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul className="nav navbar-nav navbar-right">
           <li className="nav-item">
             <Link className="nav-link" to="/login">
-              Login <i class="fas fa-sign-in-alt"></i>
+              Login <i className="fas fa-sign-in-alt"></i>
             </Link>
           </li>
         </ul>
@@ -58,12 +58,13 @@ class Navbar extends Component {
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/menu">
-              <span class="oi oi-magnifying-glass"></span>Menu
+              <span className="oi oi-magnifying-glass"></span>Menu
             </Link>
           </li>
+
           <li className="nav-item">
             <Link className="nav-link" to="/contact">
-              <span class="oi oi-magnifying-glass"></span>Contact
+              <span className="oi oi-magnifying-glass"></span>Contact
             </Link>
           </li>
           <li className="nav-item">
@@ -72,10 +73,15 @@ class Navbar extends Component {
             </Link>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul className="nav navbar-nav navbar-right">
+          <li className="nav-item">
+            <Link className="nav-link" to="/testBasket">
+              test Basket
+            </Link>
+          </li>
           <li className="nav-item">
             <Link className="nav-link" to="/basket">
-              My Basket <i class="fas fa-shopping-basket"></i>
+              My Basket <i className="fas fa-shopping-basket"></i>
             </Link>
           </li>
           <li className="nav-item">
@@ -96,7 +102,7 @@ class Navbar extends Component {
           <li className="navbar-brand">Chef Palace</li>
         </ul>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbar1"
@@ -104,7 +110,7 @@ class Navbar extends Component {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* <div
