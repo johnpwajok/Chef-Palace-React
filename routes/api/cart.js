@@ -9,12 +9,8 @@ const Cart = require("../../models/Cart");
 // @route       GET api/cart
 // @description Get all cart items
 // @access      Public
-
-// router.get("/", (req, res) => {
-//   Cart.find().then((carts) => res.json(carts));
-// });
 router.get("/:user", (req, res) => {
-  Cart.find({ user: req.params.user }).then((carts) => res.json(carts));
+  Cart.findOne({ user: req.params.user }).then((carts) => res.json(carts));
 });
 
 //add items to cart

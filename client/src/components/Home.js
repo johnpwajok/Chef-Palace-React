@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 
 import logo from "../images/logo.png";
 import chef from "../images/chef.jpg";
-import chef1 from "../images/chef1.jpg";
+// import chef1 from "../images/chef1.jpg";
 import chef2 from "../images/chef2.jpg";
 import chef3 from "../images/chef3.jpg";
-import chef4 from "../images/chef4.jpg";
+// import chef4 from "../images/chef4.jpg";
 import spicebag from "../images/spicebag.jpg";
 import munchiebox from "../images/munchiebox.jpg";
 

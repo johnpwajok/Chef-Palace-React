@@ -67,6 +67,7 @@ export class Menu extends Component {
                                 <img
                                   src={itemImage}
                                   className="itemImage"
+                                  alt="Menu Item"
                                 ></img>
                               </div>
                               <div className="menuItemInfo col-lg-4 col-md-4 col-sm-12">
@@ -120,6 +121,7 @@ export class Menu extends Component {
                                 <img
                                   src={itemImage}
                                   className="itemImage"
+                                  alt="Menu Item"
                                 ></img>
                               </div>
                               <div className="menuItemInfo col-lg-4 col-md-4 col-sm-12">
@@ -160,7 +162,11 @@ export class Menu extends Component {
                         <center>
                           <div class="row">
                             <div className="menuItemImage col-lg-4 col-md-4 col-sm-12">
-                              <img src={itemImage} className="itemImage"></img>
+                              <img
+                                src={itemImage}
+                                className="itemImage"
+                                alt="Menu Item"
+                              ></img>
                             </div>
                             <div className="menuItemInfo col-lg-4 col-md-4 col-sm-12">
                               <p>price: €{price}</p>

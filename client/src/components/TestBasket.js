@@ -10,6 +10,9 @@ import { getCart } from "../actions/cartActions";
 import PropTypes from "prop-types";
 
 export class TestBasket extends Component {
+  state = {
+    userCart: {},
+  };
   static propTypes = {
     getCart: PropTypes.func.isRequired,
     cartItem: PropTypes.object.isRequired,
@@ -18,44 +21,32 @@ export class TestBasket extends Component {
 
   componentDidMount() {
     this.props.getCart();
-    console.log("get cart ran");
-    console.log("cart: ", this.props.cartItem);
-    // this.setState({ items: this.props.menuItem });
-    // console.log("prop: ", this.props.menuItem);
-    // console.log("items State: ", this.state.items);
   }
 
   render() {
     if (this.props.isAuthenticated) {
-      const { cartItems } = this.props.cartItem;
-      console.log("cartItems: ", cartItems);
       return (
         <FadeIn>
           {this.props.cartItem.items ? (
             <div>
+              {console.log("jsx cartItems: ", this.props.cartItem.items.items)}
+              {/* {this.setState({ userCart: this.props.cartItem.items[0].items })} */}
+
               <ul>
                 <h2 className="catHead">Cart</h2>
-                {this.props.cartItem.items.map(({ user }) => (
-                  <li className="menuItem">
-                    <h4 className="menuItemName ">User ID: {user}</h4>
-                    {/* <div>
-                      <ul>
-                        <h2 className="catHead">Cart</h2>
-                        {this.props.cartItem.items.items.map(({ quantity }) => (
-                          <li className="menuItem">
-                            <h4 className="menuItemName ">{quantity}</h4>
-                          </li>
-                        ))}
-                      </ul>
-                    </div> */}
-                    {/* <p>quantity: {items.quantity}</p> */}
-                  </li>
-                ))}
+                {this.props.cartItem.items.items.map(
+                  ({ menuItem, quantity }) => (
+                    <li className="menuItem">
+                      <h4 className="menuItemName ">item ID: {menuItem}</h4>
+                      <h4 className="menuItemName">Quantity: {quantity}</h4>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           ) : (
             <div>
-              <h2>Items don't exist</h2>
+              <h2>Your cart is empty!</h2>
             </div>
           )}
         </FadeIn>

@@ -2,6 +2,7 @@ import axios from "axios";
 import { GET_CART, ADD_CART, DELETE_CART, CART_LOADING } from "./types";
 import { tokenConfig } from "./authActions"; //setup config headers and token
 import { returnErrors } from "./errorActions";
+//jwt decode needed to get user id from email
 import jwt_decode from "jwt-decode";
 
 //RETRIEVE cart items from the api
@@ -20,30 +21,35 @@ import jwt_decode from "jwt-decode";
 //     );
 // };
 
-var decoded = "";
-var userId = "";
-if (localStorage.token != null) {
-  decoded = jwt_decode(localStorage.token);
-  userId = decoded.id;
-  console.log("found id: ", userId);
-} else {
-  console.log("id not found");
-}
-
 export const getCart = () => (dispatch, getState) => {
+  //get user id from localStorage
+  var decoded = "";
+  var userId = "";
+  if (localStorage.token != null) {
+    decoded = jwt_decode(localStorage.token);
+    userId = decoded.id;
+    // console.log("found id: ", userId);
+  } else {
+    // console.log("id not found");
+  }
   dispatch(setCartLoading());
-  console.log("user", localStorage.token);
-  axios
-    .get("/api/cart/" + userId, tokenConfig(getState))
-    .then((res) =>
-      dispatch({
-        type: GET_CART,
-        payload: res.data,
-      })
-    )
-    .catch((err) =>
-      dispatch(returnErrors(err.response.data, err.response.status))
-    );
+  // console.log("user", localStorage.token);
+
+  getItems();
+  async function getItems() {
+    const data = axios
+      .get("/api/cart/" + userId, tokenConfig(getState))
+      .then((res) =>
+        dispatch({
+          type: GET_CART,
+          payload: res.data,
+        })
+      )
+      .catch((err) =>
+        dispatch(returnErrors(err.response.data, err.response.status))
+      );
+    return data;
+  }
 };
 
 //ADD item to Cart through the api
