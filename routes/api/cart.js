@@ -22,7 +22,7 @@ router.get("/:user", (req, res) => {
 router.post("/", auth, (req, res) => {
   const user = req.body.user;
   const newCartItem = {
-    menuItem: req.body.menuItem,
+    menuItemKey: req.body.menuItemKey,
     quantity: req.body.quantity,
   };
   //o
@@ -32,15 +32,15 @@ router.post("/", auth, (req, res) => {
   Cart.findOne({ user: user }).then((cartExists) => {
     if (cartExists) {
       let menuItems = cartExists.items.map(
-        (newCartItem) => newCartItem.menuItem + ""
+        (newCartItem) => newCartItem.menuItemKey + ""
       );
       //if same item already exists in the cart just update the entry
-      if (menuItems.includes(newCartItem.menuItem)) {
+      if (menuItems.includes(newCartItem.menuItemKey)) {
         Cart.findOneAndUpdate(
           {
             user: user,
             items: {
-              $elemMatch: { menuItem: newCartItem.menuItem },
+              $elemMatch: { menuItemKey: newCartItem.menuItemKey },
             },
           },
           {
