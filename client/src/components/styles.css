@@ -179,10 +179,65 @@ label.label-floatlabel {
   color: white;
   background-color: #ff8c00;
 }
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* CART SECTION */
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+/* .cartContainer {
+  
+  overflow: hidden;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+} */
+
+.cartItem {
+  overflow: hidden;
+  margin-right: 4rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  background-color: white;
+  padding: 1rem;
+}
+
+.checkoutButton {
+  height: 4rem;
+  width: 10rem;
+  border-radius: 15px;
+  color: white;
+  background-color: #ff8c00;
+}
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
+
+/* RESPONSIVENESS HANDLING SECTION */
+
+/* ////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////// */
 @media only screen and (max-width: 996px) {
   .menuItemImage {
     float: none;
     margin-bottom: 1rem;
     /* min-width: 100%; */
+  }
+}
+@media only screen and (max-width: 430px) {
+  .cartItem {
+    /* margin-right: 4rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    background-color: white;
+    padding: 1rem; */
+    /* min-width: 15rem; */
+    /* margin-right: 4rem;
+    padding-right: 4rem; */
   }
 }

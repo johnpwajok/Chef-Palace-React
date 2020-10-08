@@ -35,9 +35,9 @@ export class TestBasket extends Component {
       return (
         <FadeIn>
           {this.props.cartItem.items ? (
-            <div>
+            <div className="cartContainer">
               <ul>
-                <h2 className="catHead">Cart</h2>
+                <h2 className="catHead">Your Cart</h2>
                 {this.props.cartItem.items.items.map(
                   ({ menuItemKey, quantity }) => (
                     // <li className="menuItem">
@@ -48,11 +48,11 @@ export class TestBasket extends Component {
                       <div>
                         {this.props.menuItem.items ? (
                           this.props.menuItem.items
-                            .filter((item) => item._id === { menuItemKey })
+                            .filter((item) => item._id === menuItemKey)
                             .map(({ _id, name, price, itemImage }) => (
                               <ul>
-                                <li key={_id} className="menuItem">
-                                  <h4 className="menuItemName ">{_id}</h4>
+                                <li key={_id} className="cartItem">
+                                  <h4 className="menuItemName ">{name}</h4>
                                   <br></br>
                                   <center>
                                     <div class="row">
@@ -64,7 +64,8 @@ export class TestBasket extends Component {
                                         ></img>
                                       </div>
                                       <div className="menuItemInfo col-lg-4 col-md-4 col-sm-12">
-                                        <p>price: €{price}</p>
+                                        <p>quantity: {quantity}</p>
+                                        <p>price: €{price * quantity}</p>
                                       </div>
                                     </div>
                                   </center>
@@ -81,6 +82,8 @@ export class TestBasket extends Component {
                   )
                 )}
               </ul>
+              <br></br>
+              <button className="checkoutButton">Checkout</button>
             </div>
           ) : (
             <div>
